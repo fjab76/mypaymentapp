@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+    <h2>Pay</h2>
+    <p th:if="${resultMessage} != null" th:text="${resultMessage}"></p>
+    <div>
+        <form action="#" th:action="@{/pay}" th:object="${transaction}" method="post">
+            <table>
+                <tr>
+                    <td>From</td>
+                    <td>
+                        <select id="fromAccount" th:field="*{from}">
+                            <option th:each="account : ${accounts}" th:value="${account.name}" th:text="${account.name}"/>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>To</td>
+                    <td>
+                        <select id="toAccount" th:field="*{to}">
+                            <option th:each="account : ${accounts}" th:value="${account.name}" th:text="${account.name}"/>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Amount:</td>
+                    <td><input type="text" th:field="*{amount}" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"/></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</body>
+</html>

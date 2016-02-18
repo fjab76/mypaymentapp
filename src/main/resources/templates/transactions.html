@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<h1>Transaction</h1>
+
+    <div>
+        <h2>Accounts List</h2>
+
+
+        <form action="#" th:action="@{/account/transactions}" th:object="${accountForm}" method="post">
+
+
+                <p th:each="account : ${accounts}">
+                    <input type="radio" th:field="*{name}" th:value="${account.name}" />
+                    <label th:for="${#ids.prev('name')}" th:text="${account.name} +', '+ ${account.balance}">Template</label>
+                </p>
+
+            <input type="submit" value="Show transactions"/>
+        </form>
+    </div>
+    <div>
+        <h2 th:if="${transactions} != null">Transaction details</h2>
+        <table th:if="${transactions} != null">
+                <tr>
+                    <th>From</th><th>To</th><th>Amount</th>
+                </tr>
+                <tr th:each="transaction : ${transactions}">
+                    <td th:text="${transaction.from.name}"></td><td th:text="${transaction.to.name}"></td><td th:text="${transaction.amount}"></td>
+                </tr>
+        </table>
+
+    </div>
+</body>
+</html>
