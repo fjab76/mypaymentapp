@@ -4,7 +4,7 @@ The application has been developed using Spring MVC and Spring Boot using an emb
 ### How to run the app
 1. Clone the repository and cd into the downloaded folder
 2. Run `mvn clean install`
-3. Run `java -jar target mypaymentapp-0.0.1-SNAPSHOT.jar`
+3. Run `java -jar target/mypaymentapp-0.0.1-SNAPSHOT.jar`
 
 ### Some considerations
 For demo purposes, the application creates an in-memory database with dummy accounts. Transactions can be added
