@@ -32,8 +32,8 @@ public class TransactionService {
       return "Payment could not be made as the origin and destination accounts are the same";
     }
 
-    if(transaction.getAmount().compareTo(BigDecimal.ZERO)<0){
-      return "Payment could not be made as the amount specified to transfer is negative";
+    if(transaction.getAmount()==null || transaction.getAmount().compareTo(BigDecimal.ZERO)<0){
+      return "Payment could not be made as the amount to transfer has not been specified correctly";
     }
 
     if(!transaction.getFrom().decreaseBalance(transaction.getAmount())){

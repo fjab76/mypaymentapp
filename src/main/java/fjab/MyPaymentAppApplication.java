@@ -24,11 +24,11 @@ public class MyPaymentAppApplication{
   public InitializingBean initDatabase(){
 
     return () -> {
-      accountDatabase.add(new Account("name1", "email1@gmail.com"));
-      accountDatabase.add(new Account("name2", "email2@gmail.com"));
-      accountDatabase.add(new Account("name3", "email3@gmail.com"));
-      accountDatabase.add(new Account("name4", "email4@gmail.com"));
-      accountDatabase.add(new Account("name5", "email5@gmail.com"));
+      accountDatabase.add(new Account("Peter", "peter@gmail.com"));
+      accountDatabase.add(new Account("John", "john@gmail.com"));
+      accountDatabase.add(new Account("Laura", "laura@gmail.com"));
+      accountDatabase.add(new Account("Chris", "chris@gmail.com"));
+      accountDatabase.add(new Account("Jane", "jane@gmail.com"));
 
       accountDatabase.stream().forEach(account -> transactionDatabase.put(account,new ArrayList<>()));
     };

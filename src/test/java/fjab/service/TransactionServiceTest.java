@@ -98,7 +98,7 @@ public class TransactionServiceTest {
 
     //then
     verify(transactionDao,times(0)).save(transaction);
-    assertEquals("Payment could not be made as the amount specified to transfer is negative", result);
+    assertEquals("Payment could not be made as the amount to transfer has not been specified correctly", result);
     assertTrue(transaction.getFrom().getBalance().compareTo(BigDecimal.valueOf(200)) == 0);
     assertTrue(transaction.getTo().getBalance().compareTo(BigDecimal.valueOf(200))==0);
 

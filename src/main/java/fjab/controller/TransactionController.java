@@ -33,7 +33,7 @@ public class TransactionController {
   public ModelAndView submitForm(@ModelAttribute("transaction") Transaction payForm, BindingResult result) {
 
     ModelAndView mav = initForm();
-    mav.addObject("resultMessage","Payment could not be made");
+    mav.addObject("resultMessage","Error: Payment could not be made");
 
     if(!result.hasErrors()){
       String paymentStatus = transactionService.makePayment(payForm);

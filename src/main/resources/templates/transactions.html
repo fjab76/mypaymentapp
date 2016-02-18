@@ -22,9 +22,9 @@
             <input type="submit" value="Show transactions"/>
         </form>
     </div>
-    <div>
-        <h2 th:if="${transactions} != null">Transaction details</h2>
-        <table th:if="${transactions} != null">
+    <div th:if="${transactions} != null">
+        <h2>Transaction details</h2>
+        <table>
                 <tr>
                     <th>From</th><th>To</th><th>Amount</th>
                 </tr>
