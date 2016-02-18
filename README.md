@@ -6,6 +6,14 @@ The application has been developed using Spring MVC and Spring Boot using an emb
 2. Run `mvn clean install`
 3. Run `java -jar target/mypaymentapp-0.0.1-SNAPSHOT.jar`
 
+
+### Endpoints
+The server listens on 8080 by default
+
+* Pay form: /pay
+* Account list: /account/list
+
+
 ### Some considerations
 For demo purposes, the application creates an in-memory database with dummy accounts. Transactions can be added
 through the application.
